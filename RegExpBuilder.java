@@ -182,8 +182,7 @@ public class RegExpBuilder {
     }
 
     public RegExpBuilder from(char... c) {
-        from = escapeInsideCharacterClass(new String(c));
-        return this;
+        return from(new String(c));
     }
 
     public RegExpBuilder from(String s) {
