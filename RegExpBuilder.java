@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.regex.Pattern;
@@ -182,9 +181,18 @@ public class RegExpBuilder {
         return this;
     }
 
+    public RegExpBuilder from(char... c) {
+        from = escapeInsideCharacterClass(new String(c));
+        return this;
+    }
+
     public RegExpBuilder from(String s) {
         from = escapeInsideCharacterClass(s);
         return this;
+    }
+
+    public RegExpBuilder notFrom(char... c) {
+        return notFrom(new String(c));
     }
 
     public RegExpBuilder notFrom(String s) {
